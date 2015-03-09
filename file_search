@@ -1,0 +1,27 @@
+def file_search(folder, filename):
+	shlyax = ''
+
+	for i in folder:
+		if i == filename:
+			shlyax += folder[0] + "/" + filename
+		elif type(i) == list:
+			for n in i:
+				if n == filename:
+					shlyax += folder[0] + "/" + i[0] + "/" + filename
+				elif type(n) == list:
+					for m in n:
+						if m == filename:
+							shlyax += folder[0] + "/" + i[0] + "/" + n[0] + "/" + filename
+						elif type(m) == list:
+							for b in m:
+								if b == filename:
+									shlyax += folder[0] + "/" + i[0] + "/" + n[0] + "/" + m[0] + "/" + filename
+								elif type(b) == list:
+									for v in b:
+										if v == filename:
+											shlyax += folder[0] + "/" + i[0] + "/" + n[0] + "/" + m[0] + "/"  + b[0] + "/" + filename
+
+	if filename in shlyax:
+		return shlyax
+	else:
+		return False
