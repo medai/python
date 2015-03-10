@@ -1,3 +1,19 @@
+def file_search(folder, filename, shlyax='')
+  result = False
+  
+  for i in reversed(folder):
+    if i == filename:
+      shlyax += folder[0] + "/" + filename
+      result = True
+    elif type(i) == list:
+      result = file_search(i, filename, shlyax)
+
+  if result:
+    return shlyax
+  else:
+    return False
+    
+    
 def file_search(folder, filename):
 	shlyax = ''
 
