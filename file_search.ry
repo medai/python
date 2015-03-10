@@ -8,7 +8,7 @@ def file_search(folder, filename, shlyax='')
     elif type(i) == list:
       result = file_search(i, filename, shlyax)
 
-  if result:
+  if result == True:
     return shlyax
   else:
     return False
